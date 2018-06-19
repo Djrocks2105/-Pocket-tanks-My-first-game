@@ -1,15 +1,13 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////*****************************\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                   
                                                        POCKET TANKS
-		              **********       	 Assignment - 3 (TERM Assignment)               **********
-							 COP 290 
+		                  **********             My First Project        **********
+							 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\******************************//////////////////////////////////////////////////////////////////////////
 
-Submission  Date : 8th May 2018 
-Instructor : Prof. Huzur Saran 
-
-Submitted By : Atul Rai      (2016CSJ0074)
-	       Dwij Upadhyay (2016CSJ0009)
+Creation  Date : 8th May 2018 
+Created By : Atul Rai      (2016CSJ0074)
+	     Dwij Upadhyay (2016CSJ0009)
 
 ****************************************************************************************************************************************
 
@@ -35,10 +33,12 @@ COMPILATION AND EXECUTION:
 OVERVIEW:
 Our base file is login.html which is for logging in to the game. After submission of login form we will be redirected to Home Page/ DashBoard
 of the game. It will have three buttons:
+
     • Play : This button redirects us to our game where two players can play their game side by side.
+    
     • Play With CPU : This button will redirect us to our game where the second player i.e player against us will be CPU.
-    • History : This button will redirect us to our history of the game. It includes the details of last three games played each against CPU and
-                against any other logged in player.
+    
+    • History : This button will redirect us to our history of the game. It includes the details of last three games played each against CPU and against any other logged in player.
 
 
 ****************************************************************************************************************************************
