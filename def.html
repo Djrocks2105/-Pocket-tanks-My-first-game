@@ -1,0 +1,360 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="createjs.js"></script>
+  <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+  <style >
+    
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-size: 10pt;
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background-color: SkyBlue;
+/*  background: linear-gradient(#075799, #f2f226);*/
+}
+
+canvas{
+  vertical-align: middle;
+}
+
+.controls {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  color: black;
+
+}
+.exit {
+    position:absolute;
+    transition: .5s ease;
+    text-decoration: none;
+    top: 600px;
+    left: 0px;
+    right: 1200px;
+    bottom: -600px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: transparent;
+}
+
+.controls > div {
+  padding: 8px;
+}
+
+.controls .plus {
+  margin-left: 10px;
+  margin-right: 10px;
+  /*width: 5px;*/
+}
+
+.controls #right-player {
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.telemetry {
+  position: absolute;
+  font-size: 8pt;
+  top: 40px;
+}
+.telemetry > div{
+  margin-top:4px;
+}
+
+
+#right-player .telemetry {
+  right: 40px;
+}
+
+.telem-input {
+  width: 40px;
+}
+
+.controls input, .controls button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #444;
+  padding: 3px;
+  margin-left: 4px;
+}
+
+.controls input:disabled, .controls button:disabled {
+  color: grey;
+  border: none;
+}
+
+.controls button {
+  border-radius: 5px;
+}
+
+.controls button:hover {
+  background-color: red;
+  color:rgb(0, 0, 0);
+}
+
+.controls button:hover:disabled {
+  background-color: transparent;
+  color:grey;
+}
+
+.name{
+  color:white;
+  font-weight:bold; 
+}
+
+#player_name {
+  width: 80px;
+}
+
+.fire {
+    position:absolute;
+    transition: .5s ease;
+    top: 600px;
+    left: 600px;
+    right: 0px;
+    bottom: -600px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #3e8e41;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #40c445;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #90ed94
+}
+
+/* Show the dropdown menu on hover */
+.center:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.center:hover .dropbtn {
+    background-color: #3e8e41;
+} 
+
+
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Fira Code';
+}
+body{
+  height: 100%;
+  background: #95a5a6;
+}
+.chat-box{
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  background: linear-gradient(#e29c3f, #7ed83e);
+  width: 300px;
+  border-radius: 5px 5px 0px 0px;
+}
+.chat-head{
+  width: inherit;
+  height: 45px;
+  background: #2c3e50;
+  border-radius: 5px 5px 0px 0px;
+}
+.chat-head h2{
+  color: white;
+  padding: 8px;
+  display: inline-block;
+}
+.chat-head button{
+  cursor: pointer;
+  float: right;
+  width: 25px;
+  margin: 10px;
+}
+.chat-body{
+  height: 355px;
+  width: inherit;
+  overflow: auto;
+  margin-bottom: 45px;
+}
+.chat-text{
+  position: fixed;
+  bottom: 0px;
+  height: 45px;
+  width: inherit;
+}
+.chat-text textarea{
+  width: inherit;
+  height: inherit; 
+  box-sizing: border-box;
+  border: 1px solid #bdc3c7;
+  padding: 10px;
+  resize: none;
+}
+.chat-text textarea:active, .chat-text textarea:focus, .chat-text textarea:hover{
+  border-color: royalblue;
+}
+.msg-send{
+  background: #216807;
+}
+.msg-receive{
+  background: #5186e2;
+}
+.msg-send, .msg-receive{
+  width: 200px;
+  height: 35px;
+  padding: 5px 5px 5px 10px;
+  margin: 10px auto;
+  border-radius: 3px;
+  line-height: 30px;
+  position: relative;
+  color: white;
+}
+.msg-receive:before{
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border: 15px solid;
+  border-color: transparent #3498db transparent transparent;
+  left: -29px;
+  top: 7px;
+}
+.msg-send:after{
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border: 15px solid;
+  border-color: transparent transparent transparent #2ecc71;
+  right: -29px;
+  top: 7px;
+}
+.msg-receive:hover, .msg-send:hover{
+  opacity: .9;
+}
+
+.button-text{
+  position: fixed;
+  bottom: 0px;
+  width: inherit;
+  overflow: auto;
+  margin-bottom: 45px;
+}
+.button-text button{
+  width: 300px;
+  height: 40px;
+  color: yellow;
+  background-color: red;
+}
+
+
+
+  </style>
+</head>
+<body onload="startGame();">
+  <div class="controls">
+  <div id="left-player">
+    POWER:
+    <input class="fader" id="v1" type="range" min="0" max="100" step="1" value="75"/>
+    &Theta;:
+    <input class="fader" id="t1" type="range" min="-90" max="90" step="1" value="50"/>
+  <button class="plus" > > </button>
+  <button class="minus" > < </button>
+    <div class="telemetry">
+      <div>Player #1: <span class="T"></span> YOU</div>
+      <div>Atul Rai<span class="X"></span> </div>
+      <div>Score : <span class="Y"></span> </div>
+    </div>
+  </div>
+  <div class="center">
+    <!-- <button id="reset">Reset</button> -->
+    <button class="dropbtn">Weapons</button>
+    <div class="dropdown-content">
+      <a onclick="sniperS();">Sniper</a>
+      <a onclick="tShots();">Three Shots</a>
+      <a onclick="oShot();">One Shot</a>
+      
+      <a onclick="gamma();">Gamma Blaster</a>
+    </div>
+  </div>
+  <div id="right-player">
+    POWER:
+    <input class="fader" id="v2" type="range" min="0" max="100" step="1" value="75"/>
+    &Theta;:
+    <input class="fader" id="t2" type="range" min="-90" max="90" step="1" value="50"/>
+  <button class="plus" > > </button>
+  <button class="minus" > < </button>
+    <div class="telemetry">
+      <div>Player #2: <span class="T"></span> NEMESIS</div>
+      <div>CPU Player <span class="X"></span> </div>
+      <div>Score : <span class="Y"></span> </div>
+    </div>
+  </div>
+  <div>
+      <button class="fire" id="fireit">FIRE</button>
+  </div>
+  <div class="exit">
+	  <a href="Home.html">Leave Game</a>
+	</div>
+</div>
+<div class="wrapper">
+    <div class="chat-box">
+      <div class="chat-head">
+        <h2>Chat Box</h2>
+        <button class="arrow" onclick="hide()">
+          <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
+        </button>
+      </div>
+      <div class="chat-body" id="def">
+        <div class="msg-insert">
+            <div class="msg-send"> Send message </div>
+            <div class="msg-receive"> Received message </div>
+        </div>
+        <div class="chat-text">
+          <textarea placeholder="Send" id="abc"></textarea>
+        </div>
+        <div class="button-text">
+          <button id="sendit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<canvas id="main"  width="1000" height="500">This is a canvas element.</canvas>
+<script src="def.js" >
+
+
+</script>
+</body>
+</html>

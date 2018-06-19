@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+
+\definecolor{mycolor}{rgb}{0,0.6,0.5}
+\DeclareNewLayer[
+  foreground,
+  textarea,
+  addvoffset=-100pt,addhoffset=-90pt,
+  contents={\tikz[blue!50!green]{
+  \draw[line width =3, mycolor](0,0)rectangle(20,26);
+  }}
+  ]{frame1}
+\DeclareNewLayer[
+  foreground,
+  textarea,
+  addvoffset=-110pt,addhoffset=-100pt,
+  contents={\tikz[blue!50!green]{
+  \draw[line width =2, mycolor](0,0)rectangle(20.8,26.8);
+  }}
+  ]{frame2}
+  \DeclareNewLayer[
+  foreground,
+  textarea,
+  addvoffset=-120pt,addhoffset=-110pt,
+  contents={\tikz[blue!50!green]{
+  \draw[line width =1, mycolor](0,0)rectangle(21.5,27.5);
+  }}
+  ]{frame3}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{hyperref}
+
+
+\author{DWIJ UPADHYAY(2016csj0009)\\ATUL RAI(2016csj0074)}
+\date{\today}
+\title{\textbf{Poket Tanks Game:- SRS}}
+\begin{document} 
+\AddLayersToPageStyle{@everystyle@}{frame1}
+\AddLayersToPageStyle{@everystyle@}{frame2}
+\AddLayersToPageStyle{@everystyle@}{frame3}
+\maketitle
+\tableofcontents
+\newpage
+\section{Basic Layout}
+Our game will have the following graphical layouts which will work according to the way the user inputs data:-
+\begin{itemize}
+\item The first screen on the local host server will display the home screen of our game wich will contain the modes of playing which will contain following options which will be clickable buttons with an attarctive game background.
+\begin{enumerate}
+\item \textbf{Single Player:-}\\
+The next option if you select this option will be to select the level of CPU you want to play with and also some basic accesories you want to pick for the game.
+\item \textbf{Two Player:-}
+\begin{itemize}
+\item As soon as you select this option in the next window you would be prompted to login .\\If you are a new user you can make your account first time.
+\item After login you will gain access to create a game that is you will be the server side or join a game created by some other server.\\
+\item Then the option for selecting any accesories will come in which you can gear up your tank with some special fetures which are yet to be decided.
+\item Also there is an option of seeing your past performances along with some comment section which you can use to store some stats of your previous game to improve your game by seeing your mistakes.
+\end{itemize}
+\end{enumerate}
+\item As soon as the game begins you will be given a set of weapons can be more than one of same type.
+\item You can select your weapons according to your choice works for both one and two player or else they can be randomly selected any time
+\item As soon as both players have picked weapons then a random terrain will be generated which contains two tanks at random positions but at enough distance from each other 
+\item Now the players will get turns one by one to shoot options for power and angle will be given at the bottom portion with lables easy to find.
+\item In case of wind it will be displayed in between 
+\item Also an option for chat will be provided along with voice conversation in between at top.
+\item The winner will be displayed when all wepons are fired according to the score and teh an option for remach will be provided if you want to play in rounds or you can exit.
+\item Score board will be displayed of previous matches if you choose to replay by tapping on the player info  
+\end{itemize}
+\section{Required Softwares:-}
+1. HTTP5\\
+2. CSS3\\
+3. Firebase\\
+4. NODEJS\\
+5. CANVASJS\\
+6. ANGULARJS\\
+7. EASYJS\\
+8. SOCKET.IO\\
+\end{document}
