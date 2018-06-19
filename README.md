@@ -14,9 +14,13 @@ Created By : Atul Rai      (2016CSJ0074)
 ABOUT:
 In this assignment, you are supposed to create a web based Pocket Tanks game.
 We have divided the development of this project in three parts:
+
 a. Client Side of the game
+
 b. Server Side of the game
+
 c. Adding Chatting Option in to the game
+
 Tools to be used: JavaScript (ECMAScript 6), Angular JS, Create JS, Node
 JS, HTML5 Canvas, CSS3, Firebase and Sockets.io.
 
